@@ -10,6 +10,7 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 /**
  在服务器中的Servlet判断是否有一个名为lastTime的cookie
  1. 有：不是第一次访问

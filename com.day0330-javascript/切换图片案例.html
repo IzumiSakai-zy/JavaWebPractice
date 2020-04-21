@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换图片案例</title>
+</head>
+<body>
+    <img id="imageTest" src="./image/柯南007.png">
+    <script>
+        var elementTest=document.getElementById("imageTest");
+        var flag=false;
+        elementTest.onclick=function () {
+            if(flag){
+                elementTest.src="./image/柯南007.png";
+                flag=false;
+            }else{
+                elementTest.src="./image/柯南008.png";
+                flag=true;
+            }
+        }
+    </script>
+</body>
+</html>

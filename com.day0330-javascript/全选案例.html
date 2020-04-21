@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选案例</title>
+    <style>
+        #table{
+            border: gray solid 1px;
+            margin: auto;
+            font-size: 20px;
+        }
+        td,th{
+            text-align: center;
+            border: gray solid 1px;
+            width: 50px;
+        }
+        span{
+            align-self: center;
+            margin: 650px;
+        }
+        .over{
+            background-color: pink;
+        }
+        .out{
+            background-color: white;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            document.getElementById("selectAll").onclick=function () {
+                var inputArray=document.getElementsByTagName("input");
+                for (i=0;i<=3;i++)
+                    inputArray[i].checked=true;
+            }
+            document.getElementById("noneSelect").onclick=function () {
+                var inputArray=document.getElementsByTagName("input");
+                for (i=0;i<=3;i++)
+                    inputArray[i].checked=false;
+            }
+            document.getElementById("reverse").onclick=function () {
+                var inputArray=document.getElementsByTagName("input");
+                for (i=1;i<=3;i++)
+                    inputArray[i].checked=!inputArray[i].checked
+                inputArray[0].checked=false;
+            }
+            document.getElementById("fisrtInput").onclick=function () {
+                var inputArray=document.getElementsByTagName("input");
+                for (i=1;i<=3;i++)
+                    inputArray[i].checked=this.checked;
+            }
+
+            var trArray=document.getElementsByTagName("tr");
+            for(i=0;i<trArray.length;i++){
+                trArray[i].onmouseover=function () {
+                    this.className="over";
+                }
+                trArray[i].onmouseout=function () {
+                    this.className="out";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="table">
+        <caption>随便一个表</caption>
+        <tr>
+            <th><input type="checkbox" id="fisrtInput"></th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>张三</td>
+            <td>男</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>李四</td>
+            <td>男</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>王五</td>
+            <td>女</td>
+            <td>18</td>
+        </tr>
+    </table>
+    <span>
+        <input type="button" value="全选" id="selectAll">
+        <input type="button" value="全不选" id="noneSelect">
+        <input type="button" value="反选" id="reverse">
+    </span>
+
+</body>
+</html>

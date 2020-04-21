@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<body>
+    <img src="./image/柯南007.png" id="loopImage">
+    <script>
+        var loopImageElement=document.getElementById("loopImage");
+        function loopImage(i) {
+            var value;
+            switch (i) {
+                case 0:value="./image/柯南007.png";break;
+                case 1:value="./image/柯南008.png";break;
+                case 2:value="./image/柯南009.png";break;
+                default:value="./image/柯南010.png";break;
+            }
+            return value;
+        }
+        var i=0;
+        setInterval("loopImageElement.src=loopImage((i++)%4)",1000);
+    </script>
+</body>
+</html>

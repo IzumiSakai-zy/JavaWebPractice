@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加删除表格案例</title>
+</head>
+<body>
+
+    <input type="text" placeholder="请输入姓名" id="name">
+    <input type="text" placeholder="请输入性别" id="gender">
+    <input type="text" placeholder="请输入年龄" id="age">
+    <a href="javascript:void(0);" id="add">添加</a>
+    <table id="tb">
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+    </table>
+    <script>
+        document.getElementById("add").onclick=function () {
+            var name=document.getElementById("name").value;
+            var gender=document.getElementById("gender").value;
+            var age=document.getElementById("age").value;
+
+            var tb=document.getElementById("tb");
+            var tr=document.createElement("tr");
+            tb.appendChild(tr);
+
+            var tb1=document.createElement("td");
+            tb1.innerHTML=name;
+            var tb2=document.createElement("td");
+            tb2.innerHTML=gender;
+            var tb3=document.createElement("td");
+            tb3.innerHTML=age;
+            var tb4=document.createElement("td");
+            var del=document.createElement("input");
+            tb4.appendChild(del);
+            del.setAttribute("type","button");
+            del.setAttribute("value","删除");
+            del.onclick=function(){
+                var parent=del.parentNode.parentNode.parentNode;
+                parent.removeChild(del.parentNode.parentNode);
+            }
+
+            tr.appendChild(tb1);
+            tr.appendChild(tb2);
+            tr.appendChild(tb3);
+            tr.appendChild(tb4);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转首页</title>
+    <style>
+        #second{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center"><span id="second">5</span>秒跳转首页</h2>
+    <script>
+        var secondTest=window.document.getElementById("second");
+        var i=5;
+        function timePop() {
+            if(i>0){
+                secondTest.innerHTML=i;
+                --i;
+            }
+            if (i==0)
+                location.href="https://www.baidu.com";
+        }
+        setInterval("timePop()",1000);
+    </script>
+</body>
+</html>

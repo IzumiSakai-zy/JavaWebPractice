@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打开关闭窗口</title>
+</head>
+<body>
+    <input id="open" type="button" value="打开窗口"><br>
+    <input id="close" type="button" value="关闭窗口"><br>
+    <script>
+        var openButton=document.getElementById("open");
+        openButton.onclick=function () {
+            newWindow=open("https://www.huawei.com");
+        }
+        var closeButton=document.getElementById("close");
+        closeButton.onclick=function () {
+            newWindow.close();
+        }
+        setTimeout(function () {
+            alert("爆炸");
+        },3000)
+    </script>
+</body>
+</html>

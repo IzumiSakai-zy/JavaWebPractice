@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e58c299d-4946-4e0a-b625-f278ac4a9afb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="E:\Program File\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZF7ksunVnXM1bKP05WDASZV7Ld" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../com.day0315.mybatis" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager" selected="JUnit.CaculatorTest.addTest">
+    <configuration name="CaculatorTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.day0317" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CaculatorTest" />
+      <option name="METHOD_NAME" value="addTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CaculatorTest.caculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.day0317" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CaculatorTest" />
+      <option name="METHOD_NAME" value="caculatorTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CaculatorTest.addTest" />
+        <item itemvalue="JUnit.CaculatorTest.caculatorTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e58c299d-4946-4e0a-b625-f278ac4a9afb" name="Default Changelist" comment="" />
+      <created>1584423134693</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584423134693</updated>
+      <workItem from="1584423136129" duration="4705000" />
+      <workItem from="1584504980716" duration="278000" />
+      <workItem from="1584505277381" duration="257000" />
+      <workItem from="1584674641537" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="486" y="62" key="#com.intellij.ide.util.MemberChooser" timestamp="1584446348218">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="486" y="62" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1584446348218" />
+    <state x="552" y="345" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584423278414">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="552" y="345" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1584423278414" />
+    <state x="499" y="131" key="FileChooserDialogImpl" timestamp="1584505127279">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="131" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584505127279" />
+    <state width="1483" height="201" key="GridCell.Tab.0.bottom" timestamp="1584450461168">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584450461168" />
+    <state width="1483" height="201" key="GridCell.Tab.0.center" timestamp="1584450461167">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584450461167" />
+    <state width="1483" height="201" key="GridCell.Tab.0.left" timestamp="1584450461167">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584450461167" />
+    <state width="1483" height="201" key="GridCell.Tab.0.right" timestamp="1584450461167">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584450461167" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1584505216090">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584505216090" />
+    <state x="391" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1584674642139">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="391" y="216" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584674642139" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/test/CaculatorTest.java</url>
+          <line>34</line>
+          <properties class="test.CaculatorTest" method="caculatorTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/test/CaculatorTest.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

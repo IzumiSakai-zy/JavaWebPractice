@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS案例</title>
+    <link rel="stylesheet" href="CSS/CssExample.css">
+</head>
+<body>
+    <div class="rg_layout">
+        <div class="rg_newUser">
+            <p>新用户注册</p>
+            <p>USER REGISTER</p>
+        </div>
+
+        <div class="rg_table">
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td class="td_left"><label for="usernumber" >用户名：</label></td>
+                        <td><input  type="text" name="usernumber" id="usernumber" placeholder="请输入账号"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="password" >密码：</label></td>
+                        <td><input  type="password" name="password" id="password"placeholder="请输入密码"</td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="email" >邮箱：</label></td>
+                        <td><input  type="email" name="email" id="email" placeholder="请输入邮箱"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="username" id="fm_left">姓名：</label></td>
+                        <td><input  type="text" name="username" id="username" placeholder="请输入姓名"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="telnumber">手机号：</label></td>
+                        <td><input  type="text" name="telnumber" id="telnumber" placeholder="请输入手机号"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label>性别：</label></td>
+                        <td><input  type="radio" name="sex" value="male">男
+                        <input  type="radio" name="sex" value="female">女</td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="birthday">出生日期：</label></td>
+                        <td><input  type="date" name="birthday" id="birthday"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label>验证码：</label></td>
+                        <td><input  type="text" name="testNumber" id="testnumber"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" value="注册" id="bt_rg"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="rg_directLog">
+            <p><label>已有账号？</label><a href="#">立即登录</a></p>
+        </div>
+    </div>
+</body>
+</html>

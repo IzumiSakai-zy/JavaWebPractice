@@ -1,0 +1,79 @@
+body{
+    background: url("../image/石原里美02.png") no-repeat center;
+    height: 864px;
+    width: 1536px;
+    align:center;
+}
+*{
+    margin: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+}
+.rg_layout{
+    border: #eeeeee solid 6px;
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 270px;
+}
+
+.rg_newUser{
+    margin: 10px;
+    float: left;
+}
+.rg_newUser>p:first-child{
+    font-size: 25px;
+    color: gold;
+}
+.rg_newUser>p:last-child{
+    font-size: 18px;
+    color: #aaaaaa;
+    margin: 4px;
+}
+
+.rg_table{
+    /*border: red solid 3px;*/
+    float: left;
+    width: 400px;
+    margin-top: 80px;
+    margin-left: 170px;
+}
+.td_left{
+    text-align: right;
+    width: 100px;
+    height: 45px;
+    vertical-align: center;
+    /*border: red solid 3px;*/
+}
+#birthday,#email,#password,#telnumber,#username,#usernumber,#testnumber,#birthday{
+    border: #eeeeee solid 2px;
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+}
+#testnumber{
+    width: 30px;
+}
+#birthday{
+    vertical-align: auto;
+}
+#bt_rg{
+    width: 60px;
+    height: 40px;
+    background-color: gold;
+    border: gold solid 3px;
+}
+
+.rg_directLog{
+    float: right;
+    margin: 10px;
+}
+.rg_directLog label{
+    font-size: 15px;
+}
+.rg_directLog a{
+    color: pink;
+    padding: 0px;
+}
+

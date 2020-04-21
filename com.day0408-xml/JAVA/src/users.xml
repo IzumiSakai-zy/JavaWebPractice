@@ -1,0 +1,18 @@
+<?xml version='1.0' ?>
+<goods>
+    <good >
+        <name>大米</name>
+        <quantity number="5">4</quantity>
+        <price>2.0</price>
+    </good>
+    <good>
+        <name>手机</name>
+        <quantity>1</quantity>
+        <price>1999</price>
+    </good>
+    <good>
+        <name>蔬菜</name>
+        <quantity>3</quantity>
+        <price>6.5</price>
+    </good>
+</goods>

@@ -23,4 +23,5 @@ It shows the process of my java web learning
           * 是一个**HttpServlet**
           * 调用**业务逻辑层**和**数据库访问层**获得数据
           * 使用**转发**方式跳转到list.jsp
+       * list.jsp
           * 通过jstl的foreach循环将request域中的数据展示输出

@@ -15,6 +15,7 @@ It shows the process of my java web learning
        * jstl
        * mysql-connector-java-8.0.15.jar（连接mysql）
        * spring template(包含多个sping依赖，用于封装jdbc)
+       * spring bean(包含多个sping依赖，用于数据库对象)
    * 读取展示数据库的数据
        * index.jsp
           * 首先导入css,js依赖

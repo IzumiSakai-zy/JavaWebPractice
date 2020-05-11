@@ -63,17 +63,26 @@ It shows the process of my java web learning
           * 点击list.jsp页面上的修改联系人按钮就跳转到**writeBackServlet**
           * 通过**？index=${user.index}*通知服务器需要修改的用户的id
        * WriteBackServlet.class
-          * 调用**业务逻辑层**和**数据库访问层**返回一个根据id值而查询到的用户
+          * 调用**业务逻辑层**和**数据库访问层**返回一个根据id值而查询到的**用户**
           * **转发**到**update.jsp**(用于回写内容)
        * update.jsp
+          * 这个页面没有index属性值，需要使用input按钮**hidden属性**来保存从writeBackServlet获得的index值
           * 通过**writeBackServlet**转发的User对象对表单进行回写
+          * 用户按照修改意愿对表单进行修改
+          * 修改结束后点提交到**updateServlet**进行处理
+       * UpdateServlet.class
+          * 将获取的数据封装成一个User对象
+          * 调用**业务逻辑层**和**数据库访问层**将user作为参数进行更新处理
+              * 数据库访问层主要通过**index值**锁定对象。然后把其他所有属性值重写一遍。
        * 遇到的问题
           * **queryForObject()**方法以及其他有关数据库操作的方法。**？**占用最后赋值的参数永远都在参数的最后
-          * 性别**单选框**的回写有难度，使用如下代码：
-            ``<c:if test="${user.gender=='男'}">
-                <input type="radio" name="gender" value="男" checked="checked"/>男
-                <input type="radio" name="gender" value="女"/>女
-            </c:if>``
-            其中``test="${user.gender=='男'}"``写法要特别注意**单引号**和**布尔值全写在ef表达式内**
+          * 性别**单选框**的回写有难度，使用如下代码：  
+            ``<c:if test="${user.gender=='男'}"> ``<br>
+              ``<input type="radio" name="gender" value="男" checked="checked"/>男``<br>
+              ``<input type="radio" name="gender" value="女"/>女``<br>
+            ``</c:if>``  
+            其中`` test="${user.gender=='男'}" ``写法要特别注意**单引号**和**布尔值全写在ef表达式内**
+          * **input**按钮可以加上**readonly属性**
+          * update的SQL语句顺序是** update set where **，where排在最后
    
       

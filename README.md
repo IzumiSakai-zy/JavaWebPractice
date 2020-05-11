@@ -43,7 +43,7 @@ It shows the process of my java web learning
           * 涉及到客户端向服务器发送数据时，servlet代码的第一句一定是**设置编码**
           * 重定向是**resp**的方法，且最好加上**req.getContextPath()**
           * 添加客户DAO层要使用**update（）**，不能用**excute（）**
-    * 删除用户
+   * 删除用户
         * list.jsp
           * 点击list.jsp页面上的删除联系人按钮就跳转到**deleteServlet**
           * 通过**？index=${user.index}*通知服务器需要删除的用户的id

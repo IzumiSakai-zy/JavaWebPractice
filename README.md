@@ -47,6 +47,21 @@ It shows the process of my java web learning
         * list.jsp
           * 点击list.jsp页面上的删除联系人按钮就跳转到**deleteServlet**
           * 通过**？index=${user.index}*通知服务器需要删除的用户的id
+          * 为了增强用户体验。还必须增加是否确认删除的判断，代码如下  
+            ``href="javascript:deleteUser(${user.index});"``  
+            ``function deleteUser(index) {
+                if (confirm("你确定要删除吗？"))
+                location.href="${pageContext.request.contextPath}/deleteServlet?index="+index;}``
+       * DeleteServlet.class
+          * 调用**业务逻辑层**和**数据库访问层**删除一个用户
+          * 重定向跳转到**UserListServlet**(因为要更新查询，不然内容不变)
+       * 遇到的问题
+          * 因为数据库中的index值是int类型，而获取的参数是string类型，必须要进行转化。
+          * 写SQL语句时**delete from user where index = ?**是错误的；必须写成**delete from user where `index` = ?**，index要有**单引号**。在这卡了很久很久
+    * 修改用户
+        * list.jsp
+          * 点击list.jsp页面上的删除联系人按钮就跳转到**deleteServlet**
+          * 通过**？index=${user.index}*通知服务器需要删除的用户的id
        * DeleteServlet.class
           * 调用**业务逻辑层**和**数据库访问层**删除一个用户
           * 重定向跳转到**UserListServlet**(因为要更新查询，不然内容不变)

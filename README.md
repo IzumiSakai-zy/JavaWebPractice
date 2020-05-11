@@ -16,6 +16,7 @@ It shows the process of my java web learning
        * mysql-connector-java-8.0.15.jar（连接mysql）
        * spring template(包含多个sping依赖，用于封装jdbc)
        * spring bean(包含多个sping依赖，用于数据库对象)
+       * commons-beanutils-1.8.3.jar（用于通过map字典参数来封装成bean对象）
    * 读取展示数据库的数据
        * index.jsp
           * 首先导入css,js依赖
@@ -39,5 +40,18 @@ It shows the process of my java web learning
        * 遇到的问题
           * list.jsp中表单的**name**属性值必须与**User**类中定义的属性名字一模一样，不然转成bean对象会出错
           * 静态页面间的相互跳转最好使用**绝对路径**
+          * 涉及到客户端向服务器发送数据时，servlet代码的第一句一定是**设置编码**
+          * 重定向是**resp**的方法，且最好加上**req.getContextPath()**
+          * 添加客户DAO层要使用**update（）**，不能用**excute（）**
+    * 删除用户
+        * list.jsp
+          * 点击list.jsp页面上的删除联系人按钮就跳转到**deleteServlet**
+          * 通过**？index=${user.index}*通知服务器需要删除的用户的id
+       * DeleteServlet.class
+          * 调用**业务逻辑层**和**数据库访问层**删除一个用户
+          * 重定向跳转到**UserListServlet**(因为要更新查询，不然内容不变)
+       * 遇到的问题
+          * 因为数据库中的index值是int类型，而获取的参数是string类型，必须要进行转化。
+          * 写SQL语句时**delete from user where index = ?**是错误的；必须写成**delete from user where `index` = ?**，index要有**单引号**。在这卡了很久很久
    
       

@@ -1,10 +1,68 @@
 # JavaWebPractice
 It shows the process of my java web learning
-## 通过github上传来作为打卡吧，一天天的慢慢学
 *************************************
-**************************************
-### com.day0426-CaseTest —— CS架构连接服务器实现CRUD和一些其他显示
-   * 环境
+### Junit单元测试
+* 测试分类
+  * 黑盒测试——不用写代码
+  * 白盒测试——需要写代码
+  
+* 测试步骤
+
+  * 导入Junit依赖
+
+  * 创建一个类，类名为 "测试类Test"
+
+  * 定义一个可以独立运行的方法。要求访问类型为public，返回值为void，参数列表为空
+
+  * 在这个方法上面加上`@Test`注解
+```java
+public class  CaculatorTest {
+    @Before
+    public void inite(){
+        System.out.println("Before方法执行了");
+    }
+    @After
+    public void close(){
+        System.out.println("After方法被执行了");
+    }
+
+    @Test
+    public void addTest(){
+        //1、创建对象
+        Caculator caculator=new Caculator();
+        //2、调用方法
+        int result=caculator.sub(9,4);
+        //3、断言
+        Assert.assertEquals(5,result);
+    }
+}
+```
+* 其他
+  * `@Before`一般用于资源申请, `@After`一般用于资源释放
+  * `Assert.assertEquals(5,result);`这是断言的写法
+************************
+### 反射
+
+* 定义：框架设计的灵魂所在，将类的各个部分封装成对象
+* 一个类的三个阶段
+  * 源码阶段
+    * Peroson.java源文件被javac编译器编译成Peroson.class文件
+    * 这个Person.class文件别划分为三个部分——成员属性，构造函数，成员方法
+  * Class类的对象阶段（Class是一个类，类名的Class）
+    * Person.class文件在类加载器classLoader的加载下变成一个对象
+    * 这个对象有方法`public Field[] getFields()`, `public Method[] getMethods()`, `public Constructor<?>[] getConstructors()`可以获得成员属性，构造函数，成员方法
+    * 还有获得注解，包名，类名等的对应方法，总之能获得与这个类相关的一切信息
+  * 运行时阶段
+    * 此时已经实例化成了一个真正对象，一般通过 "new Person()"方式
+* 反射与框架的一些联系
+  * 创建对象的时候为了尽量降低耦合都在编译阶段把类停留在Class类对象阶段
+  * 需要使用时才通过Class类对象的方法创建出实例化对象
+* 获取Class对象的三种方式
+  * `Class.forName(com.service.AccountService)`通过Class类的静态方法forName()方法
+  * `Person.Class`通过类名.Class方式，一般用于参数传递
+  * `peoson.getClass()`通过Object类的getClass()方法获取
+### 实现简单CRUD
+   *  环境
        * JDK1.8.0_241
        * TomCat 8.5.54
    * IDE
@@ -58,7 +116,7 @@ It shows the process of my java web learning
        * 遇到的问题
           * 因为数据库中的index值是int类型，而获取的参数是string类型，必须要进行转化。
           * 写SQL语句时**delete from user where index = ?**是错误的；必须写成**delete from user where `index` = ?**，index要有**数字1左边的符号**。在这卡了很久很久。
-    * 修改用户
+        * 修改用户
         * list.jsp
           * 点击list.jsp页面上的修改联系人按钮就跳转到**writeBackServlet**
           * 通过**？index=${user.index}*通知服务器需要修改的用户的id
@@ -84,5 +142,9 @@ It shows the process of my java web learning
             其中`` test="${user.gender=='男'}" ``写法要特别注意**单引号**和**布尔值全写在ef表达式内**
           * **input**按钮可以加上**readonly属性**
           * update的SQL语句顺序是** update set where **，where排在最后
-   
-      
+
+​      
+
+```
+
+```

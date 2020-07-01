@@ -163,9 +163,9 @@ public class  CaculatorTest {
   
 * html一些基本标签
   
-  * 头标签<head></head>  用于指定html的一些属性，引入外部资源等
+  * 头标签`<head></head>`  用于指定html的一些属性，引入外部资源等
   
-  * 链接标签<link rel="stylesheet" href="CSS/CssExample.css">  位置于<head>标签内部，用于引用资源，rel="stylesheet"表示当前页面与href所指定文档的关系，即说明的是href连接的文档是一个新样式表
+  * 链接标签`<link rel="stylesheet" href="CSS/CssExample.css">  `位置于<head>标签内部，用于引用资源，rel="stylesheet"表示当前页面与href所指定文档的关系，即说明的是href连接的文档是一个新样式表
   
   * 顶部标签 <!DOCTYPE html> 位置于文档最顶部，表明这是html文档
   
@@ -271,7 +271,7 @@ public class  CaculatorTest {
     </form>
     ```
     
-  * 输入标签<input></input>
+  * 输入标签`<input></input>`
   
     ```html
     <!--单选框-->
@@ -301,7 +301,6 @@ public class  CaculatorTest {
 
   * height属性的单位是像素，因为网页高度的最大值是无限的；width的单位是百分数，因为网页宽度的最大值是固定的
 
-* 非
 ******************
 ### 实现简单CRUD
    *  环境

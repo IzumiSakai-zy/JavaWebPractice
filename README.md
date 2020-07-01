@@ -165,15 +165,17 @@ public class  CaculatorTest {
   
   * 头标签`<head></head>`  用于指定html的一些属性，引入外部资源等
   
-  * 链接标签`<link rel="stylesheet" href="CSS/CssExample.css">  `位置于<head>标签内部，用于引用资源，rel="stylesheet"表示当前页面与href所指定文档的关系，即说明的是href连接的文档是一个新样式表
+  * 资源链接标签`<link rel="stylesheet" href="CSS/CssExample.css">  `位置于`<head>`标签内部，用于引用资源，rel="stylesheet"表示当前页面与href所指定文档的关系，即说明的是href连接的文档是一个新样式表
   
-  * 顶部标签 <!DOCTYPE html> 位置于文档最顶部，表明这是html文档
+  * 链接标签`<a href="javascript:void(0)">删除内容</a>`。链接标签有被点击和跳转到指定URL两个功能，href="javascript:void(0)"语句屏蔽了功能二，屏蔽后可以设置onclick方法，实现一些自定义功能
   
-  * 图片标签<img src="./image/石原里美01.png" alt="石原里美"> 
+  * 顶部标签 `<!DOCTYPE html>` 位置于文档最顶部，表明这是html文档
+  
+  * 图片标签`<img src="./image/石原里美01.png" alt="石原里美"> `
     * "./"表示当前目录下；"../" 表示上一级目录下
     * `alt="石原里美"` 表示在图片加载失败时
     
-  * 列表标签 <ol></ol>有序列表   <ul></ul>无序列表
+  * 列表标签 `<ol></ol>`有序列表   `<ul></ul>`无序列表
   
     ```html 
     <!--有序列表
@@ -192,7 +194,7 @@ public class  CaculatorTest {
     </ul>
     ```
     
-  * 链接标签<a></a>
+  * 链接标签`<a></a>`
   
     ```html
     <!--新建一个页跳转-->
@@ -205,11 +207,11 @@ public class  CaculatorTest {
     <a href="https://www.baidu.com"><img src="./image/石原里美01.png" alt="石原里美"></a>
     ```
     
-  * <span></span>不换行；<div></div>要换行
+  * `<span></span>`不换行；`<div></div>`要换行
   
-  * 语义化标签<header></header>和<footer></footer>等。作用和<div></div>一样，只是方便理解
+  * 语义化标签`<header></header>`和`<footer></footer>`等。作用和`<div></div>`一样，只是方便理解
   
-  * 表格标签<table></table>
+  * 表格标签`<table></table>`
   
     * 表格里面还可以继续嵌套表格
   
@@ -237,7 +239,7 @@ public class  CaculatorTest {
     </table>
     ```
     
-  * 表单标签<form></form>
+  * 表单标签`<form></form>`
   
     ```HTML
     <!--action是提交处理的url地址-->
@@ -302,6 +304,312 @@ public class  CaculatorTest {
   * height属性的单位是像素，因为网页高度的最大值是无限的；width的单位是百分数，因为网页宽度的最大值是固定的
 
 ******************
+### CSS
+* 作用——页面美化和布局控制
+
+* 三种引入方式
+
+  * 内联方式`<div style="color:red;">hello</div>`
+
+  * 内部样式——`<head></head>`内定义样式
+  ```html
+    <head>
+        <style>
+            div{color: red;align-content: center}
+        </style>
+    </head>
+    <body>
+      <div style="color: red;">hello</div>
+    </body>
+  ```
+  * 外部样式——定义在文件中，通过选择器来区分
+  
+    ```HTML
+    <head>
+        <link href="./CSS/CssExample.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="rg_directLog">hello</div>
+    </body>
+    ```
+  
+* 选择器语法
+
+  * id选择器`#birthday{vertical-align:center;height: 30px;padding: 10px;}`核心是#
+  * 类选择器`.birthday{vertical-align:center;height: 30px;padding: 10px;}`核心是.
+  * 元素选择器`div{vertical-align:center;height: 30px;padding: 10px;}`核心是元素名如div
+  * 所有选择器`*{vertical-align:center;height: 30px;padding: 10px;}`核心是*
+  
+* 复合属性`boder: 3px solid red`中间以空格区分而不是逗号
+
+* css案例。在笔记第24页
+**************************
+### JavaScript
+* 概念：运行在客户端浏览器中，客户端有js解析引擎，不用编译直接解释执行
+
+* 功能：增强交互体验
+
+* 引入方式
+  * 内部js：定义在任意位置，但不同的位置会赢影响执行顺序。如`<script>alert("hello javascript")</script>`
+  * 外部js：定义在外部js文件中。`<script src="./js/jquery.js" />`
+  
+* 基本数据类型(首字符都是小写)
+
+  * number：包括整数、小数、NAN
+
+  * string：包括字符、字符串。js中无字符概念，统称字符串
+
+  * boolean; null; undefined
+  
+* 语法
+  * js是弱类型语言，变量定义为`var name="Izumi Sakai"`
+  * typeof()运算，用于查看是啥类型
+  * "+"运算符只能加减数字，遇到不是数字就强转，最终非整数小数会被转成NAN
+  * "=="运算符若类型不同会先进行类型转换，而"==="不转换类型。`"123"==123`为true，`"123"===123`为false
+  * 其他类型向boolean转换。“0”和“NAN”和空字符串为false，其他的number和string形为true
+  * 分号可以写可以不写，但建议写
+  * 定义变量时var用了是局部变量，没用是全局变量
+  * 输出内容 `document.write("content");`和`document.writeln()`
+  
+* function的写法(方法自始至终都是一个对象)
+
+  * 写法一`function func(a,b){alert(a+b)};`
+  * 写法二`var func2=new function(a,b){document.write(a+b)};`
+  * 特性：方法实际调用时只与方法名字有关，而与参数列表无关。`function func(a,b){alert(a);alert(b);}`这个方法调用`func(1)`就能成功
+  
+* Array对象
+
+  * 创建
+
+    * 方式一`Array array=new Array(5);`创建数组的长度是5
+    * 方式二`Array array=new Array(5,true,"hah");`创建的数组长度为3，里面的元素类型可变。注意是()而不是[]
+    * 方式三`var array=[3,true,"hello"]`
+  * 特点
+    * 方式二用的是()而不是[]
+    * 不会发生越界访问问题，最多越界的类型是undefined
+  * 方法
+    * pop()  最后一个元素出队
+    * push("hello")  添加一个元素
+  
+* Date对象
+
+  * 创建`var date=new Date();`
+
+  * 方法 toLocalString()  显示的格式与操作系统有关
+  
+* Math
+  * 和java一样都是静态方法，直接使用就行
+  * 方法
+    * rando() 返回[0,1)的一个小数
+    * ceil(4.2)  向上取整
+    * floor(3.2)  向下取整
+    * round(3.4)  四舍五入
+  
+* 正则对象
+  * 创建`var reg=new RegExp("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$");`
+  * 方法  test("izumisakai@aliyun.com")。返回一个boolean值
+  * 注意事项
+    * 正则表达式开始符号是"^"，结束符号是"$"
+    * 因为转义字符，"\"要写成"\\"
+  
+* Global对象
+
+  *  定义：全局对象，其方法不用对象.方法的方式，直接调用
+
+  * 方法
+
+    * 解码编码方法。因为HTTP协议不支持中文，如百度的搜索框内容被编码传输，需要在界面展示的内容被解码
+
+      * encodeURIComponent()和decodeURIComponent()两个方法和下面的区别就是支持的中文更多
+
+      ```javascript
+      var encode=encodeURI("百度")
+      var decode=decodeURI(encode);
+      document.writeln(decode);
+      ```
+      
+    * `parseInt("432432");`字符串转数字，一位一位转，知道不是数字为止。  
+    
+    * `isNAN()`判断是不是NAN
+  
+* DOM——Document Object Model
+
+  * 功能：控制HTML文档的内容的内容
+  * document对象方法
+    * `var element=document.getElementById("username");`把每个html标签抽取成元素
+    * `var element=document.createElementById("div");`创建一个div的标签对象。属性内容啥都是空，但是可以自行调用方法添加
+  * Element对象的属性  "src", "innerHTML", "innerTEXT", "onclick"等等
+  * Element对象的方法
+    * `setAttribute("style","color:red;");`
+    * `removeAttribute("style");`
+  * Node对象
+    *  特点：所有的DOM对象类都是Node的子类
+    *  方法
+      * `appendChild(Element element)`
+      * `removeChild(Element element)`
+      * `replaceChild(Element element)`
+  
+* 事件
+
+  * 创建 `<button onclick="alert("hello")" />`或者`<button onclick="func("hello")" />`
+  * 使用思路：通过DOM获取到这个对象，然后设置绑定事件
+  
+* 图片切换案例
+
+  * 重点核心：script代码一定要放在最后`<body></body>`后面，不然会有加载顺序的问题
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>图片切换</title>
+  </head>
+  <body>
+      <img src="./image/柯南007.png" id="picture">
+  </body>
+  <script>
+      var is007=true;
+      var picture=document.getElementById("picture");
+      picture.onclick=function () {
+          if(is007){
+              picture.src="./image/柯南007.png";
+              is007=false;
+          }else {
+              picture.src="./image/柯南008.png";
+              is007=true;
+          }
+      }
+  </script>
+  </html>
+  ```
+  
+* BOM——Browser Object Model
+
+  * 浏览器对象
+    * window对象
+    * Navigator对象
+    * History对象
+    * ……
+  
+* window对象
+
+  * 特点：不用对象.方法使用，直接方法名使用方法
+  * 方法
+    * `alert("警告"); `用于弹出警告
+    * `var isSure=confirm("确认要关闭吗？");`弹出确认警告，返回一个boolean值
+    * `var content=prompt("请输入内容");`弹出一个对话框，接收用户输入内容，返回一个字符串
+    * `window.close();`关闭这个窗口，谁调用关谁
+    * `open("https://www.baidu.com");`弹出并返回一个新的window对象，但可能弹页会被浏览器拦截
+    * `var id=setTiemout("alert('警告')",3000)`作用是3秒后弹一次警告，只弹一次。注意执行的内容必须有双引号，双引后内还要用引号就用单引号
+    * `clearTimeout(id)`传入id清楚setTimeout()
+    * `var id=setInterval("alert('警告')",3000)`作用是每隔3秒弹一次警告，弹无数次。注意执行的内容必须有双引号，双引后内还要用引号就用单引号
+    * `clearInterval(id)`传入id清楚setInterval()
+  
+* 轮播图
+
+  ```HTML
+  </head>
+  <body>
+      <img src="./image/柯南007.png" id="loopImage">
+  </body>
+  <script>
+      var loopImageElement=document.getElementById("loopImage");
+      function loopImage(i) {
+          var value;
+          switch (i) {
+              case 0:value="./image/柯南007.png";break;
+              case 1:value="./image/柯南008.png";break;
+              case 2:value="./image/柯南009.png";break;
+              default:value="./image/柯南010.png";break;
+          }
+          return value;
+      }
+      var i=0;
+      setInterval("loopImageElement.src=loopImage((i++)%4)",1000);
+  </script>
+  </html>
+  ```
+  
+* 倒计时跳转
+
+  ```HTML
+  </head>
+  <body>
+      <span id="second">10</span>后跳转到百度
+  </body>
+  <script>
+      var i=10;
+      element=document.getElementById("second");
+      function func(){
+          element.innerText=i--;
+          if (i==1)
+              location.href="https://www.baidu.com";
+      }
+      setInterval("func()",1000);
+  </script>
+  </html>
+  ```
+  
+* Location地址栏对象
+
+  * 创建：直接location就行
+  * 方法：location.reload()相当于F5刷新
+  * 属性
+    * var href=location.href 获取当前的URL
+    * location.href="https://www.baidu.com" 强制跳转到百度
+  
+* 添加删除表格案例
+
+  ```HTML
+  <body>
+      <input type="text" placeholder="请输入姓名" id="name">
+      <input type="text" placeholder="请输入性别" id="gender">
+      <input type="text" placeholder="请输入年龄" id="age">
+      <a href="javascript:void(0);" id="add">添加</a>
+      <table id="tb">
+          <tr>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>年龄</th>
+              <th>操作</th>
+          </tr>
+      </table>
+  </body>
+  <script>
+      document.getElementById("add").onclick=function () {
+          var name=document.getElementById("name").value;
+          var gender=document.getElementById("gender").value;
+          var age=document.getElementById("age").value;
+  
+          var tb=document.getElementById("tb");
+          var tr=document.createElement("tr");
+          tb.appendChild(tr);
+  
+          var tb1=document.createElement("td");
+          tb1.innerHTML=name;
+          var tb2=document.createElement("td");
+          tb2.innerHTML=gender;
+          var tb3=document.createElement("td");
+          tb3.innerHTML=age;
+          var tb4=document.createElement("td");
+          var del=document.createElement("input");
+          tb4.appendChild(del);
+          del.setAttribute("type","button");
+          del.setAttribute("value","删除");
+          del.onclick=function(){
+              var parent=del.parentNode.parentNode.parentNode;
+              parent.removeChild(del.parentNode.parentNode);
+          }
+  
+          tr.appendChild(tb1);
+          tr.appendChild(tb2);
+          tr.appendChild(tb3);
+          tr.appendChild(tb4);
+      }
+  </script>
+  ```
+*******************
 ### 实现简单CRUD
    *  环境
        * JDK1.8.0_241

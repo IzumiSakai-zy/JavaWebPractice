@@ -59,8 +59,250 @@ public class  CaculatorTest {
   * 需要使用时才通过Class类对象的方法创建出实例化对象
 * 获取Class对象的三种方式
   * `Class.forName(com.service.AccountService)`通过Class类的静态方法forName()方法
-  * `Person.Class`通过类名.Class方式，一般用于参数传递
+  * `Person.class`通过类名.Class方式，一般用于参数传递
   * `peoson.getClass()`通过Object类的getClass()方法获取
+*********************
+### 注解
+
+* 作用分类
+
+  * 用于编写文档，如javadoc文档。`@Parm, @Return, @Author`这类注解会在javadoc命令下被抽取成api文档
+
+  * 用于编译检查，如`@Overide`检查方法是否为重写方法
+
+  * 用于编程，如其他很多注解
+* java预定义注解
+  * `@Overide`用于检查方法是否重写
+  * `@Deprecated`用于标注这个属性或方法等已经过时，不推荐使用，但强行使用依然OK
+  * `@SuperessWarning`用于压制警告，即使有警告也不弹出来被压制住
+* 自定义注解
+  * 注解实质——继承了java.lang.annotation.Annotation的一个接口
+  * 定义语句`public interface 注解名 extends java.lang.annotation.Annotation{...}`
+* 元注解——描述注解的注解
+  * `@Target`标注注解能够作用的位置
+  * `@Retention`注解能够保留的阶段
+  * `@Documented`表明是否被抽取到API文档中
+  * `@Inherited`表明注解能否被继承 
+* 解析注解——实际上是利用反射的机制
+  * 获取含有注解的类的Class对象(字节码)`Class personClass=Person.class;`
+  * 获取Class对象上的所有注解对象`Annotation[] annotations=Caculator.class.getAnnotations();`
+  * 获取注解对象的值
+* 注意事项
+
+  * 大多数时候都是使用注解而不是自定义
+
+  * 注解是给编译器(检查编译)和解析程序(解析以实现功能)使用
+
+  * 注解不是程序的一部分，而是标签
+* 利用注解实现自定义测试框架核心——通过字节码获取所有方法，判断上面有没有注解，如果有就执行
+***************************
+### JDBC
+* 本质——Sun公司定义了一套操作所有关系数据库的接口，数据库厂商根据接口分别写出的实现类的集合就是对应数据库的java驱动。然后通过多态的方式，声明时使用顶层接口，实际对象时使用实现类来实现调用
+
+* 核心对象及其作用
+  * DriverManager对象
+    * 注册驱动
+    * 获取Connection对象
+    
+  * Connection对象
+    * 获取执行SQL语句的对象Statement和PreparedStatement
+    * 进行事务管理，设置是否自动提交事务
+    
+  * Statement和PreparedStatement对象
+  
+    * 执行SQL语句
+    
+  * ResultSet对象
+  
+    * 对结果集进行遍历
+  
+* PreparedStatement对象防止注入危险
+
+  ```java
+  //定义Sql语句
+  String sql="select * from user where name=? and password=?";
+  //获取PreparedStatement对象
+  PreparedStatement preparedStatement=connection.preparedStatement(sql);
+  //设置参数值
+  preparedStatement.setString(1,"IzumiSakai");
+  preparedStatement.setString(2,"123456");
+  //执行sql语句
+  ResultSet resultSet=preparedStatement.executeQuery();
+  ```
+  
+* 事务操作
+
+  ```java
+  try{
+      con.setAutoCommit(false);
+      ...
+      转账程序
+      ...
+      con.commmit();
+  }catch(Exception e){
+      con.rollback();
+  }
+  ```
+***************
+### HTML
+
+* 静态资源——所有用户看到都是一样的资源
+
+  * css, javascript, html, 文, 音, 视, 图
+  
+* 动态资源——不同用户看到会不一样的资源
+
+  * jsp, servlet, php, asp
+
+  * 请求动态资源，服务器执行动态资源，但最后返回的还是静态资源
+  
+* 三大静态资源作用
+  * html——展示
+  * css——美化布局
+  * javascript——控制元素，具有动态效果
+  
+* html一些基本标签
+  
+  * 头标签<head></head>  用于指定html的一些属性，引入外部资源等
+  
+  * 链接标签<link rel="stylesheet" href="CSS/CssExample.css">  位置于<head>标签内部，用于引用资源，rel="stylesheet"表示当前页面与href所指定文档的关系，即说明的是href连接的文档是一个新样式表
+  
+  * 顶部标签 <!DOCTYPE html> 位置于文档最顶部，表明这是html文档
+  
+  * 图片标签<img src="./image/石原里美01.png" alt="石原里美"> 
+    * "./"表示当前目录下；"../" 表示上一级目录下
+    * `alt="石原里美"` 表示在图片加载失败时
+    
+  * 列表标签 <ol></ol>有序列表   <ul></ul>无序列表
+  
+    ```html 
+    <!--有序列表
+    	其中type的属性有"A,a,1"等-->
+    <ol type="A">
+        <li>第一项</li>
+        <li>第二项</li>
+    </ol>
+    
+    <!--无序列表
+    	其中type的属性有"square,circle"等,表示项目符号的形状-->
+    <ul type="circle">
+         <li>第一项</li>
+         <li>第二项</li>
+         <li>第三项</li>
+    </ul>
+    ```
+    
+  * 链接标签<a></a>
+  
+    ```html
+    <!--新建一个页跳转-->
+    <a href="https://www.baidu.com" target="_blank">百度一下</a>
+    
+    <!--本页跳转，此种方式为默认方式-->
+    <a href="https://www.baidu.com" target="_self">百度一下</a>
+    
+    <!--把图片设置成链接-->
+    <a href="https://www.baidu.com"><img src="./image/石原里美01.png" alt="石原里美"></a>
+    ```
+    
+  * <span></span>不换行；<div></div>要换行
+  
+  * 语义化标签<header></header>和<footer></footer>等。作用和<div></div>一样，只是方便理解
+  
+  * 表格标签<table></table>
+  
+    * 表格里面还可以继续嵌套表格
+  
+    ```html
+    <table border="1">
+        <!--标题-->
+        <caption>表格</caption>
+        <tr>
+            <!--表头-->
+            <th>姓名</th>
+            <th>性别</th>
+            <th>成绩</th>
+        </tr>
+        <tr>
+            <!--向下合并列-->
+            <td rowspan="2">小明</td>
+            <td>男</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>小红</td>
+            <!--横向合并行-->
+            <td colspan="2">女</td>
+        </tr>
+    </table>
+    ```
+    
+  * 表单标签<form></form>
+  
+    ```HTML
+    <!--action是提交处理的url地址-->
+    <form action="#" method="post">
+        <!--此处使用的是form内嵌套table-->
+        <table>
+            <tr>
+                <!--for可以与id进行绑定-->
+                <td class="td_left"><label for="usernumber" >用户名：</label></td>
+                <td><input  type="text" name="usernumber" id="usernumber" placeholder="请输入账号"></td>
+            </tr>
+            <!--单元radio的使用-->
+            <tr>
+                <td class="td_left"><label>性别：</label></td>
+                <td><input  type="radio" name="sex" value="male">男
+                <input  type="radio" name="sex" value="female">女</td>
+            </tr>
+            <!--input框的属性还能是date-->
+            <tr>
+                <td class="td_left"><label for="birthday">出生日期：</label></td>
+                <td><input  type="date" name="birthday" id="birthday"></td>
+            </tr>
+            <tr>
+                <td class="td_left"><label>验证码：</label></td>
+                <td><input  type="text" name="testNumber" id="testnumber"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="注册" id="bt_rg"></td>
+            </tr>
+        </table>
+    </form>
+    ```
+    
+  * 输入标签<input></input>
+  
+    ```html
+    <!--单选框-->
+    <input  type="radio" name="sex" value="female" checked="checked">
+    
+    <!--多选框-->
+    <input type="checkbox" value="math" name="subject" checked="checked">
+    <input type="checkbox" value="English" name="subject">
+    
+    <!--日期-->
+    <input  type="date" name="birthday">
+    
+    <!--隐藏域-->
+    <input  type="hidden" name="id">
+    ```
+    
+  * 下拉列表
+  
+    ```HTML
+    <select name="subject">
+        <option value="math">数学</option>
+        <option value="Chinese" selected="selected">语文</option>
+        <option value="English">英语</option>
+    </select>
+    ```
+* 其他
+
+  * height属性的单位是像素，因为网页高度的最大值是无限的；width的单位是百分数，因为网页宽度的最大值是固定的
+
+* 非
+******************
 ### 实现简单CRUD
    *  环境
        * JDK1.8.0_241
@@ -143,8 +385,4 @@ public class  CaculatorTest {
           * **input**按钮可以加上**readonly属性**
           * update的SQL语句顺序是** update set where **，where排在最后
 
-​      
-
-```
-
-```
+  

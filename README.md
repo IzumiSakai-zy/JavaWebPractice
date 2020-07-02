@@ -370,6 +370,7 @@ public class  CaculatorTest {
   * 分号可以写可以不写，但建议写
   * 定义变量时var用了是局部变量，没用是全局变量
   * 输出内容 `document.write("content");`和`document.writeln()`
+  * element.onclick=func; 此处func不能加()，因为是把func看成一个对象进行赋值
   
 * function的写法(方法自始至终都是一个对象)
 
@@ -492,7 +493,7 @@ public class  CaculatorTest {
     * History对象
     * ……
   
-* window对象
+* window对象——就相当于`<body></body>`部分
 
   * 特点：不用对象.方法使用，直接方法名使用方法
   * 方法
@@ -606,6 +607,120 @@ public class  CaculatorTest {
           tr.appendChild(tb2);
           tr.appendChild(tb3);
           tr.appendChild(tb4);
+      }
+  </script>
+  ```
+  
+* 常见事件
+
+  * 点击事件：onclick(); ondbclick()
+  * 焦点事件：onfocus(); 获得焦点    onblur(); 失去焦点(一般用于验证输入，不对就显示红叉和错误信息)
+  * 加载事件：onload(); 完成加载事件
+    * window.onload=function(){...}  可用于等body加载完毕才执行script内的代码
+  * 鼠标事件：onmousedown(); onmouseup(); onmousemove(); onmouseover(); onmouseout(); 
+  * 键盘事件：onkeydown(); onkeyup(); onkeypress(); 
+    * element.onmousedown=function(event){...}  用形参event去接收事件，可用event访问事件属性
+  * 选中事件：onchagne(); onselect();
+  * 表单事件：onsubmit(); 用于验证是否符合要求，符合就提交  onreset();
+  
+* 鼠标悬浮与离开事件
+
+  ```HTML
+  <body>
+      <span></span>
+      <button>按钮</button>
+  </body>
+  <script>
+      var span=document.getElementsByTagName("span")[0];
+      var button=document.getElementsByTagName("button")[0];
+      button.onmouseover=function () {
+          span.innerText="onmouseover";
+      }
+      button.onmouseout=function () {
+          span.innerText="onmouseout";
+      }
+  </script>
+  ```
+
+* 验证表单提交
+
+  * onsubmit的属性值类似字符串。因此要写"return func()"才会被解析成要执行里面的函数，否则默认返回true
+  * inputElement.value和inputElement.getAttribute("value")的值不一样，后者是null，前者才有值
+
+  ```HTML
+  <body>
+      <form action="https://www.baidu.com" method="get" onsubmit="return func()">
+          <input name="username" type="text" id="username">
+          <input type="submit" name="提交">
+      </form>
+  </body>
+  <script>
+      function func() {
+          if (document.getElementById("username").value=="Izumi Sakai")
+              return true;
+          else
+              return false;
+      }
+  </script>
+  ```
+  
+* 表格全选，全不选，反选案例
+
+  * checked的属性为true和false
+
+  ```HTML
+  <body>
+      <table>
+          <tr>
+              <td><input type="checkbox" id="all"></td>
+              <td>姓名</td>
+              <td>班级</td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" class="part"></td>
+              <td>张三</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" class="part"></td>
+              <td>李四</td>
+              <td>2</td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" class="part"></td>
+              <td>王五</td>
+              <td>3</td>
+          </tr>
+          <tr>
+              <td><button id="allselect" >全选</button></td>
+              <td><button id="noneselect" >全不选</button> </td>
+              <td><button id="reversselect" >反选</button> </td>
+          </tr>
+      </table>
+  </body>
+  <script>
+      inputs=document.getElementsByClassName("part");
+      document.getElementById("all").onclick=function () {
+          for(i=0;i<inputs.length;i++){
+              inputs[i].checked=this.checked;
+          }
+      }
+      document.getElementById("allselect").onclick=function () {
+          for(i=0;i<inputs.length;i++){
+              inputs[i].checked=true;
+          }
+          document.getElementById("all").checked=true;
+      }
+      document.getElementById("noneselect").onclick=function () {
+          for(i=0;i<inputs.length;i++){
+              inputs[i].checked=false;
+          }
+          document.getElementById("all").checked=false;
+      }
+      document.getElementById("reversselect").onclick=function () {
+          for(i=0;i<inputs.length;i++){
+              inputs[i].checked=!inputs[i].checked;
+          }
       }
   </script>
   ```
